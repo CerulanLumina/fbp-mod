@@ -1,0 +1,19 @@
+[package]
+name = "fbp-mod"
+version = "1.0.0"
+authors = ["Lumina Sapphira <CerulanLumina@users.noreply.github.com>"]
+description = "Modify Factorio blueprints from the command line"
+repository = "https://github.com/CerulanLumina/fbp-mod"
+homepage = "https://github.com/CerulanLumina/fbp-mod"
+license = "MPL-2.0"
+keywords = ["factorio", "command-line", "blueprint"]
+categories = ["command-line-utilities", "games"]
+edition = "2021"
+
+[dependencies]
+anyhow = "1.0.86"
+clap = { version = "4.5.4", features = ["derive"] }
+either = "1.12.0"
+factorio-blueprint = { git = "https://github.com/coriolinus/factorio-blueprint.git", rev = "dda08661b6982d3edd9f9db9f05ab215b30e14ed" }
+jsonxf = "1.1.1"
+serde_json = "1.0.117"
