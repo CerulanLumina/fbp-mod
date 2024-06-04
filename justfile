@@ -1,4 +1,12 @@
-fmt:
-    cargo +nightly fmt -- --config imports_granularity="Crate"
+build:
+    cargo build --release
+
 clippy *args:
-    cargo +nightly clippy {{args}} -- -W clippy::pedantic -W clippy::all
+    cargo clippy -- -D clippy::pedantic -D clippy::all {{ args }}
+
+_fmt *args:
+    cargo +nightly fmt {{ args }} -- --config imports_granularity="Crate"
+
+fmt: _fmt
+
+fmt-check: (_fmt '--check')
